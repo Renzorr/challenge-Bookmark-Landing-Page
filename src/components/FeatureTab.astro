@@ -1,0 +1,100 @@
+<div
+  class="text-dark-blue flex w-full max-w-[730px] mt-[70px] mb-[73px] mx-auto tablet:flex-col tablet:gap-[30px]"
+>
+  <button
+    class="relative w-full tracking-[0.5px] pb-[24px] border-b-[1px] border-line hover:text-red duration-200 active tab-btn"
+    >Simple Bookmarking</button
+  >
+  <button
+    class="relative w-full tracking-[0.5px] pb-[24px] border-b-[1px] border-line hover:text-red duration-200 tab-btn"
+    >Speedy Searching</button
+  >
+  <button
+    class="relative w-full tracking-[0.5px] pb-[24px] border-b-[1px] border-line hover:text-red duration-200 tab-btn"
+    >Easy Sharing</button
+  >
+</div>
+<div
+  class="grid grid-cols-[minmax(200px,550px)_minmax(200px,445px)] justify-between tablet:grid-cols-1 tablet:text-center tablet:gap-[50px]"
+>
+  <img
+    src="/img/illustration-features-tab-1.svg"
+    alt=""
+    aria-hidden="true"
+    width="536"
+    height="346"
+    class="tab-img tablet:justify-self-center"
+  />
+  <article class="pt-[59px]">
+    <h3 class="text-[32px] text-dark-blue font-medium mb-[20px] tab-title">
+      Bookmark in one click
+    </h3>
+    <p class="text-[18px] text-gray tab-content">
+      Organize your bookmarks however you like. Our simple drag-and-drop
+      interface gives you complete control over how you manage your favourite
+      sites.
+    </p>
+    <a
+      href="#"
+      class="inline-block text-[13px] tracking-[1.1px] font-medium bg-blue text-white py-[13px] px-[22px] border-2 border-transparent rounded-md mt-[35px] shadow-btn hover:bg-white hover:text-blue hover:border-blue duration-200"
+      >More Info</a
+    >
+  </article>
+</div>
+
+<style>
+  button::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+  }
+
+  button.active::after {
+    background: red;
+  }
+</style>
+
+<script>
+  const img = document.querySelector(".tab-img");
+  const title = document.querySelector(".tab-title");
+  const content = document.querySelector(".tab-content");
+  const buttons = document.querySelectorAll(".tab-btn");
+
+  const data = [
+    {
+      img: "/img/illustration-features-tab-1.svg",
+      title: "Bookmark in one click",
+      content:
+        "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.",
+    },
+    {
+      img: "/img/illustration-features-tab-2.svg",
+      title: "Intelligent search",
+      content:
+        "Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.",
+    },
+    {
+      img: "/img/illustration-features-tab-3.svg",
+      title: "Share your bookmarks",
+      content:
+        "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
+    },
+  ];
+
+  function updateContent(index) {
+    img.src = data[index].img;
+    title.textContent = data[index].title;
+    content.textContent = data[index].content;
+  }
+
+  buttons.forEach((button, index) =>
+    button.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("active"));
+      button.classList.add("active");
+      updateContent(index);
+    })
+  );
+</script>

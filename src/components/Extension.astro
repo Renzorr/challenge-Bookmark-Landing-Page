@@ -1,0 +1,58 @@
+---
+import ExtensionCard from "../components/ExtensionCard.astro"
+
+const data = [
+  {
+    logo: "/img/logo-chrome.svg",
+    extension: "Chrome",
+    version: "Minimum version 62",
+    margin: "0px"
+  },
+  {
+    logo: "/img/logo-firefox.svg",
+    extension: "Firefox",    
+    version: "Minimum version 55",
+    margin: "mt-[44px]"
+  },
+  {
+    logo: "/img/logo-opera.svg",
+    extension: "Opera",    
+    version: "Minimum version 46",
+    margin: "mt-[84px]"
+  },
+];
+---
+
+<section class="mt-[153px]">
+  <div class="container">
+    <article class="flex flex-col items-center text-center">
+      <h2
+        class="text-[30px] text-dark-blue font-medium tracking-[0.8px] mb-[20px]"
+      >
+        Download the extension
+      </h2>
+      <p
+        class="text-[18px] text-gray tracking-[0.1px] max-w-[550px] text-center"
+      >
+        We’ve got more browsers in the pipeline. Please do let us know if you’ve
+        got a favourite you’d like us to prioritize.
+      </p>
+    </article>
+    <div
+      class="grid items-start grid-cols-[minmax(180px,290px)_minmax(180px,290px)_minmax(180px,290px)] justify-between w-full max-w-[920px] mt-[55px] mx-auto tablet:grid-cols-[minmax(180px,290px)]  tablet:justify-center tablet:gap-[50px]"
+    >
+      {
+        data.map((element) => {
+          return (
+          <ExtensionCard 
+          logo={element.logo}
+          extension={element.extension}
+          version={element.version}
+          margin={element.margin}
+          />
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

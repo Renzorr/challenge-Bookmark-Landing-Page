@@ -1,0 +1,62 @@
+---
+import FAQAccordion from "../components/FAQAccordion.astro";
+
+const Faqs = [
+  {
+    question: "What is Bookmark?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.",
+    isFirst: true,
+  },
+  {
+    question: "How can I request a new browser?",
+    answer:
+      "Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.",
+    isFirst: false,
+  },
+  {
+    question: "Is there a mobile app?",
+    answer:
+      "Vivamus luctus eros aliquet convallis ultricies. Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin ex et ultricies bibendum.",
+    isFirst: false,
+  },
+  {
+    question: "What about other Chromium browsers?",
+    answer:
+      "Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non ut velit.",
+    isFirst: false,
+  },
+];
+---
+
+<section class="mt-[146px]">
+  <div class="container flex flex-col items-center">
+    <h2
+      class="text-[30px] text-dark-blue font-medium tracking-[0.8px] mb-[20px] text-center"
+    >
+      Frequently Asked Questions
+    </h2>
+    <p
+      class="text-[18px] text-gray tracking-[0.1px] max-w-[540px] text-center mb-[58px]"
+    >
+      Here are some of our FAQs. If you have any other questions you’d like
+      answered please feel free to email us.
+    </p>
+    {
+      Faqs.map((element) => {
+        return (
+          <FAQAccordion
+            question={element.question}
+            answer={element.answer}
+            isFirst={element.isFirst}
+          />
+        );
+      })
+    }
+    <a
+      href="#"
+      class="text-[14px] font-medium text-white bg-blue border-2 border-transparent tracking-[-0.3px] px-[26px] py-[12px] mt-[53px] rounded-md hover:bg-white hover:text-blue hover:border-blue duration-200 shadow-btn"
+      >More Info</a
+    >
+  </div>
+</section>

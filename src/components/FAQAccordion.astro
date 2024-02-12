@@ -1,0 +1,30 @@
+---
+const { question, answer, isFirst } = Astro.props;
+---
+
+<details
+  name="Bookmark Manager question"
+  class=`w-full max-w-[540px]  ${isFirst ? 'border-y-[1px]'  : 'border-b-[1px]'} border-line py-[18px] [&_img]:open:rotate-180 group`
+>
+  <summary class="flex items-center justify-between cursor-pointer">
+    <h3
+      class="text-[18px] text-dark-blue tracking-[0.1px] pt-[3px] group-hover:text-red duration-200"
+    >
+      {question}
+    </h3>
+    <img
+      src="/img/icon-arrow.svg"
+      alt=""
+      aria-hidden="true"
+      class="mr-[22px] contrast- duration-200"
+    />
+  </summary>
+  <p class="text-grayish-blue mt-[30px] leading-[36px]">{answer}</p>
+</details>
+
+<style>
+  details[open] img {
+    filter: invert(42%) sepia(85%) saturate(696%) hue-rotate(319deg)
+      brightness(99%) contrast(98%);
+  }
+</style>

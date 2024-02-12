@@ -1,0 +1,54 @@
+<section class="text-white bg-blue text-center mt-[150px] pt-[65px] pb-[72px]">
+  <div class="container flex flex-col items-center">
+    <span class="text-[13px] font-medium tracking-[5.2px] uppercase"
+      >35,000+ Already joined</span
+    >
+    <h2
+      class="max-w-[490px] text-[30px] font-medium leading-[40px] tracking-[0.8px] mt-[35px] mb-[25px]"
+    >
+      Stay up-to-date with what we’re doing
+    </h2>
+    <form
+      action=""
+      class="flex items-center justify-center gap-[15px] mt-[10px] w-full mobile:flex-col"
+    >
+      <input
+        type="email"
+        class="text-[14px] text-dark-blue tracking-[0.2px] w-full max-w-[300px] py-[14px] pl-[20px] rounded-md border-2 border-transparent"
+        placeholder="Enter your email address"
+      />
+      <button
+        type="submit"
+        class="w-full max-w-[125px] text-[14px] font-medium text-white bg-red py-[14px] rounded-md border-2 border-transparent hover:bg-white hover:text-red hover:border-red duration-200 mobile:max-w-[300px]"
+        >Contact Us</button
+      >
+    </form>
+  </div>
+</section>
+
+<style>
+
+  .alert {
+    border: 2px solid #fa5959;
+    background-image: url(/img/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: center right 5%;
+  }
+</style>
+
+<script>
+  const inputField = document.querySelector("input");
+  const contactForm = document.querySelector("form");
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (inputField.value === "") {
+      inputField.classList.add("alert");
+    }
+
+    inputField.addEventListener("focus", () => {
+      inputField.classList.remove("alert");
+    });
+  });
+</script>

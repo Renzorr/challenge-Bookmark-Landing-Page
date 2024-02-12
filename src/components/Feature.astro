@@ -1,0 +1,23 @@
+---
+import FeatureTab from "../components/FeatureTab.astro";
+---
+
+<section
+  class="relative mt-[85px] min-h-[775px] before:absolute before:w-[46%] before:h-[350px] before:bg-blue before:left-0 before:bottom-0 before:rounded-tr-[600px] before:rounded-br-[600px] before:z-[-1] tablet:before:w-[70%] tablet:before:h-[200px] tablet:before:bottom-[28%] tablet:mt-[150px]"
+>
+  <div class="container">
+    <article class="text-center flex flex-col items-center">
+      <h2
+        class="text-[30px] text-dark-blue font-medium tracking-[0.8px] mb-[21px]"
+      >
+        Features
+      </h2>
+      <p class="text-[18px] text-gray tracking-[0.1px] max-w-[555px]">
+        Our aim is to make it quick and easy for you to access your favourite
+        websites. Your bookmarks sync between your devices so you can access
+        them on the go.
+      </p>
+    </article>
+    <FeatureTab />
+  </div>
+</section>

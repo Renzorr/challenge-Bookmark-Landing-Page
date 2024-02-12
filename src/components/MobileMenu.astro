@@ -1,0 +1,53 @@
+<div
+  class="bg-black text-white fixed top-0 left-0 w-full h-screen pt-[58px] z-[99] hidden mobile-menu"
+>
+  <div class="container flex flex-col items-center">
+    <div class="w-full flex justify-between items-center">
+      <img src="/img/logo-bookmark-white.svg" alt="" />
+      <button class="cursor-pointer close-menu"
+        ><img src="/img/icon-close.svg" alt="" /></button
+      >
+    </div>
+    <ul class="text-center mt-[50px] w-full">
+      <li class="uppercase border-t border-t-gray py-[25px]">
+        <a href="#">Features</a>
+      </li>
+      <li class="uppercase border-t border-t-gray py-[25px]">
+        <a href="#">Pricing</a>
+      </li>
+      <li class="uppercase border-t border-t-gray py-[25px]">
+        <a href="#">Contact</a>
+      </li>
+      <li class="uppercase border-t border-t-gray py-[25px]">
+        <a href="#" class="block border border-white w-full py-[20px]">Login</a>
+      </li>
+    </ul>
+
+    <div class="flex items-center gap-[40px] mt-[100px]">
+      <a href="#"><img src="/img/icon-facebook.svg" alt="facebook icon" /></a>
+      <a href="#"><img src="/img/icon-twitter.svg" alt="twitter icon" /></a>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (width < 1024px) {
+    .mobile-menu.active {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const menu = document.querySelector(".menu");
+  const closeMenu = document.querySelector(".close-menu");
+
+  menu.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+  });
+
+  closeMenu.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
+</script>
